@@ -40,11 +40,12 @@ class DirectReports extends Component {
 
         if(this.state.manager){
             this.props.handleFindChildren(this.state.manager);
-        }
-        
+        }   
     }
 
+    
     render(){
+        console.log(this.props);
         return (
             <div>
                 <Card>

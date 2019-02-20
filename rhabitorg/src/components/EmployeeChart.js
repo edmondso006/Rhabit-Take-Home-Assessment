@@ -25,7 +25,6 @@ class EmployeeChart extends Component {
                 )
             })
         }
-        
     }
 
     render(){
@@ -38,7 +37,7 @@ class EmployeeChart extends Component {
                         </Typography>
 
                         <ul>
-                            { this.list(this.props.treeData) }
+                            {this.list(this.props.treeData)}
                         </ul>                  
                     </CardContent>
               </Card>

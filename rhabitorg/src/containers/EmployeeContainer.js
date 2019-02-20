@@ -56,17 +56,16 @@ class EmployeeContainer extends Component {
         //Breaks the recursion if there is no more employees
         if(data.id !== null){
            if(data.children.length > 0){
-               for(let i=0; i < data.children.length; i++){
-                   //console.log(data.children[i]);
+                //Loop through the children and call function recursively
+                for(let i=0; i < data.children.length; i++){
                    this.employeesToAdd.push(data.children[i]);
                    this.parseTree(data.children[i]);
-               }
+                }
            }
        }
     }
 
     handleSubmit = (data) => {
-        //http://localhost:3001/api/v1/employees?first_name=Jennifer&last_name=Brooke&title=Software Engineer&parent_id=1
         axios.post('http://localhost:3001/api/v1/employees', {
             first_name: data.first_name,
             last_name: data.last_name,
@@ -74,6 +73,7 @@ class EmployeeContainer extends Component {
             parent_id: data.parent_id
         })  //Updates the state without mutating it so it instantly refreshes after adding new idea
             .then((res) => {
+                //Updates the state without mutating it
                 const employees = update(this.state.employees, {
                     $splice: [[0,0, res.data]]
                 });
@@ -102,6 +102,7 @@ class EmployeeContainer extends Component {
         axios.delete(`http://localhost:3001/api/v1/employees/${id}`)
             .then((res) => {
                 const employeeIndex = this.state.employees.findIndex(x => x.id === id);
+                //Updates the state without mutating it
                 const employees = update(this.state.employees, {$splice: [[employeeIndex, 1]]})
                 this.setState({
                     employees: employees
@@ -119,17 +120,22 @@ class EmployeeContainer extends Component {
         })
     }
 
+    //Function to parse the subtree returned from the api.
+    parseSubTree = (data) => {
+        let root = data[0];
+        this.employeesToAdd = [];
+        for(let i=0; i < root.children.length; i++){
+            this.employeesToAdd.push(root.children[i]);
+        }
+        this.setState({
+            directEmployees: this.employeesToAdd
+        });
+    }
+
     handleFindChildren = (managerID) => {
         axios.get(`http://localhost:3001/api/v1/employees/${managerID}`)
             .then(res => {
-                this.employeesToAdd = [];
-
-                for(let i=0; i < res.data.length; i++){
-                    this.employeesToAdd.push(res.data[i]);
-                }
-                this.setState({
-                    directEmployees: this.employeesToAdd
-                })
+                this.parseSubTree(res.data);        
             })
             .catch(err => console.error(err));
     }

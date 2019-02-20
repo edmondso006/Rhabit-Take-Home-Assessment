@@ -15,7 +15,6 @@ const AllEmployee = (props) => {
                     </Typography>
                     <Grid container spacing={16}>
                         {props.employees.map((employee) => {
-                            //console.log(employee)
                             return (
                                 <Grid item xs={3} key={employee.id}>
                                     <Employee employee={employee} handleDelete={props.handleDelete} employees={props.employees} handleEdit={props.handleEdit} />

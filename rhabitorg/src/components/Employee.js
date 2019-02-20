@@ -135,58 +135,55 @@ class Employee extends Component {
                     >
                     <DialogTitle id="edit-employee">Edit Employee: {this.props.employee.first_name + ' ' + this.props.employee.last_name}</DialogTitle>
                         <DialogContent>
-                                <TextField
-                                    autoFocus
-                                    margin="dense"
-                                    id="first_name"
-                                    label="First Name"
-                                    type="text"
-                                    fullWidth
-                                    value={this.state.first_name}
-                                    onChange={this.handleChange}
-                                />
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                id="first_name"
+                                label="First Name"
+                                type="text"
+                                fullWidth
+                                value={this.state.first_name}
+                                onChange={this.handleChange}
+                            />
 
-                                <TextField
-                                    autoFocus
-                                    margin="dense"
-                                    id="last_name"
-                                    label="Last Name"
-                                    type="text"
-                                    fullWidth
-                                    value={this.state.last_name}
-                                    onChange={this.handleChange}
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                id="last_name"
+                                label="Last Name"
+                                type="text"
+                                fullWidth
+                                value={this.state.last_name}
+                                onChange={this.handleChange}
+                            />
 
-                                />
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                id="title"
+                                label="Title"
+                                type="text"
+                                fullWidth
+                                value={this.state.title}
+                                onChange={this.handleChange}
+                            />
 
-                                <TextField
-                                    autoFocus
-                                    margin="dense"
-                                    id="title"
-                                    label="Title"
-                                    type="text"
-                                    fullWidth
-                                    value={this.state.title}
-                                    onChange={this.handleChange}
-
-                                />
-
-                                <FormControl fullWidth={true}>
-                                    <InputLabel htmlFor="manager">Manager</InputLabel>
-                                        <Select
-                                            value={this.state.manager}
-                                            onChange={this.handleManagerChange}
-                                            input={<Input name="manager" id="manager" />}
-                                        >
-                                            {this.props.employees.map((employee) => {
-                                                let name = employee.first_name + ' ' + employee.last_name;
-                                                return (
-                                                    <MenuItem value={employee.id} key={employee.id}>{name}</MenuItem>
-                                                )                                
-                                            })}
-                                        </Select>
-                                    </FormControl>
-                                    {this.state.validInput === false ? <p>Please fill out all fields</p> : null }           
-
+                            <FormControl fullWidth={true}>
+                                <InputLabel htmlFor="manager">Manager</InputLabel>
+                                    <Select
+                                        value={this.state.manager}
+                                        onChange={this.handleManagerChange}
+                                        input={<Input name="manager" id="manager" />}
+                                    >
+                                    {this.props.employees.map((employee) => {
+                                        let name = employee.first_name + ' ' + employee.last_name;
+                                        return (
+                                            <MenuItem value={employee.id} key={employee.id}>{name}</MenuItem>
+                                            )                                
+                                    })}
+                                </Select>
+                            </FormControl>
+                            {this.state.validInput === false ? <p>Please fill out all fields</p> : null }           
                         </DialogContent>
                     <DialogActions>
                         <Button onClick={this.handleEditClose} color="primary">
@@ -197,7 +194,6 @@ class Employee extends Component {
                         </Button>
                     </DialogActions>
                 </Dialog>
-    
             </div>
         )
     }

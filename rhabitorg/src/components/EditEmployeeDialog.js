@@ -7,8 +7,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 
-
-
 class AddEmployee extends Component {
 
     constructor(props){
@@ -50,71 +48,68 @@ class AddEmployee extends Component {
     }
 
     render(){
-        console.log('re-render');
         return (
             <div>
-            ]
-                   <DialogTitle id="form-dialog-title">Edit Employee: {this.props.employee.first_name + ' ' + this.props.employee.last_name}</DialogTitle>
-                        <DialogContent>
-                                <TextField
-                                    autoFocus
-                                    margin="dense"
-                                    id="first_name"
-                                    label="First Name"
-                                    type="text"
-                                    fullWidth
-                                    value={this.state.first_name}
-                                    onChange={this.handleChange}
-                                />
+                <DialogTitle id="form-dialog-title">Edit Employee: {this.props.employee.first_name + ' ' + this.props.employee.last_name}</DialogTitle>
+                    <DialogContent>
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                id="first_name"
+                                label="First Name"
+                                type="text"
+                                fullWidth
+                                value={this.state.first_name}
+                                onChange={this.handleChange}
+                            />
 
-                                <TextField
-                                    autoFocus
-                                    margin="dense"
-                                    id="last_name"
-                                    label="Last Name"
-                                    type="text"
-                                    fullWidth
-                                    value={this.state.last_name}
-                                    onChange={this.handleChange}
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                id="last_name"
+                                label="Last Name"
+                                type="text"
+                                fullWidth
+                                value={this.state.last_name}
+                                onChange={this.handleChange}
+                            />
 
-                                />
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                id="title"
+                                label="Title"
+                                type="text"
+                                fullWidth
+                                value={this.state.title}
+                                onChange={this.handleChange}
+                            />
 
-                                <TextField
-                                    autoFocus
-                                    margin="dense"
-                                    id="title"
-                                    label="Title"
-                                    type="text"
-                                    fullWidth
-                                    value={this.state.title}
-                                    onChange={this.handleChange}
-
-                                />
-
-                                <FormControl fullWidth={true}>
-                                    <InputLabel htmlFor="manager">Manager</InputLabel>
-                                        <Select
-                                            value={this.state.manager}
-                                            onChange={this.handleManagerChange}
-                                            input={<Input name="manager" id="manager" />}
-                                        >
-                                            {this.props.employees.map((employee) => {
-                                                let name = employee.first_name + ' ' + employee.last_name;
+                            <FormControl fullWidth={true}>
+                                <InputLabel htmlFor="manager">Manager</InputLabel>
+                                    <Select
+                                        value={this.state.manager}
+                                        onChange={this.handleManagerChange}
+                                        input={<Input name="manager" id="manager" />}
+                                    >
+                                        {this.props.employees.map((employee) => {
+                                            let name = employee.first_name + ' ' + employee.last_name;
                                                 return (
-                                                    <MenuItem value={employee.id} key={employee.id}>{name}</MenuItem>
-                                                )                                
-                                            })}
-                                        </Select>
-                                    </FormControl>
-                        </DialogContent>
-                    <DialogActions>
-                        <Button onClick={this.handleEditClose} color="primary">
-                        Cancel
-                        </Button>
-                        <Button onClick={this.handleSubmit} color="primary">
-                        Save
-                        </Button>
-                    </DialogActions>
+                                                <MenuItem value={employee.id} key={employee.id}>{name}</MenuItem>
+                                            )                                
+                                        })}
+                                    </Select>
+                                </FormControl>
+                    </DialogContent>
+
+                <DialogActions>
+                    <Button onClick={this.handleEditClose} color="primary">
+                    Cancel
+                    </Button>
+                    <Button onClick={this.handleSubmit} color="primary">
+                    Save
+                    </Button>                    
+                </DialogActions>
 
             </div>
         )

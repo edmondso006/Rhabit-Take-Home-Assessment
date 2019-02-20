@@ -22,8 +22,8 @@ module Api::V1
 
         #returns the direct children of specific employee in nested json object
         def show
-            #Find the employee with id supplied from the front-end and return direct children of that node
-            begin @employees = Employee.find(params[:id]).children.arrange_serializable(:order => :id)
+            #Find the employee with id supplied from the front-end and return direct subtree of that node including the parent node
+            begin @employees = Employee.find(params[:id]).subtree.arrange_serializable(:order => :id)
                 render json: @employees
             rescue => err 
                 render json: {error: err}
