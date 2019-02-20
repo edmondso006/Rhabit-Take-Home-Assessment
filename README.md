@@ -28,7 +28,6 @@ create postgres user with username: rhabit password: rhabit1
 cd rhabitOrg-api
 bundle install
 rake db:setup
-rake db:migrate
 rake db:seed
 rake db:migrate
 
