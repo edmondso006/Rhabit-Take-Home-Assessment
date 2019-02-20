@@ -39,4 +39,5 @@ rails server -p 3001 //Make sure port is 3001. React is running on 3000
 * Look into performance
 * Run unit tests
 * Run usability tests
+* Ruby / Rails best pratices
 
