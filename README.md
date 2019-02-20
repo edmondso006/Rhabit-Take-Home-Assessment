@@ -15,21 +15,29 @@ psql (10.6 (Ubuntu 10.6-0ubuntu0.18.04.1))
 ### Installation
 1. Clone the repo
 
-FrontEnd setup
+Frontend setup
 ```
 cd rhabitorg
 npm i
 npm start
 ```
 
-BackEnd Setup
+Backend Setup
 create postgres user with username: rhabit password: rhabit1
 ```
 cd rhabitOrg-api
+bundle install
 rake db:setup
 rake db:migrate
 rake db:seed
 rake db:migrate
 
-rails server -p 3001
+rails server -p 3001 //Make sure port is 3001. React is running on 3000
 ```
+
+## Things to impove on if had more time
+* Better Chart Visualization
+* Look into performance
+* Run unit tests
+* Run usability tests
+
