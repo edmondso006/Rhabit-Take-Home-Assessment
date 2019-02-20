@@ -24,7 +24,7 @@ npm start
 ```
 
 Backend Setup
-create postgres user with username: rhabit / password: rhabit1
+* create postgres user with username: rhabit / password: rhabit1
 ```
 cd rhabitOrg-api
 bundle install
