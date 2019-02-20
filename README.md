@@ -3,12 +3,13 @@ This is the take home engineering assessment for Rhabit.
 
 ## Set up
 ### Prerequisites
-Make sure that you have Ruby, Ruby on Rails, Node, React, PostgresSQL installed.
+Make sure that you have Ruby, Ruby on Rails, Node, NPM, PostgresSQL installed.
 My versions:
 ```
 ruby 2.6.1p33 (2019-01-30 revision 66950) [x86_64-linux]
 Rails 5.2.2
 Node v10.4.0
+npm 6.1.0
 psql (10.6 (Ubuntu 10.6-0ubuntu0.18.04.1))
 ```
 
