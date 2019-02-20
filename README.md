@@ -27,9 +27,8 @@ create postgres user with username: rhabit password: rhabit1
 ```
 cd rhabitOrg-api
 bundle install
-rake db:setup
 rake db:seed
-rake db:migrate
+rake db:setup
 
 rails server -p 3001 //Make sure port is 3001. React is running on 3000
 ```
