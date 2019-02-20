@@ -10,7 +10,7 @@ ruby 2.6.1p33 (2019-01-30 revision 66950) [x86_64-linux]
 Rails 5.2.2
 Node v10.4.0
 psql (10.6 (Ubuntu 10.6-0ubuntu0.18.04.1))
-``
+```
 
 ### Installation
 1. Clone the repo
