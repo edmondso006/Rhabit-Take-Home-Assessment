@@ -3,34 +3,41 @@ This is the take home engineering assessment for Rhabit.
 
 ## Set up
 ### Prerequisites
-Make sure that you have Ruby, Ruby on Rails, Node, React, PostgresSQL installed.
+Ruby, Ruby on Rails, Node, NPM, PostgresSQL
 My versions:
 ```
 ruby 2.6.1p33 (2019-01-30 revision 66950) [x86_64-linux]
 Rails 5.2.2
 Node v10.4.0
+npm 6.1.0
 psql (10.6 (Ubuntu 10.6-0ubuntu0.18.04.1))
 ```
 
 ### Installation
 1. Clone the repo
 
-FrontEnd setup
-
+Frontend setup
 ```
 cd rhabitorg
 npm i
 npm start
 ```
 
-BackEnd Setup
-create postgres user with username: rhabit password: rhabit1
+Backend Setup
+* create postgres user with username: rhabit / password: rhabit1
 ```
 cd rhabitOrg-api
-rake db:setup
-rake db:migrate
+bundle install
 rake db:seed
-rake db:migrate
+rake db:setup
 
-rails server -p 3001
+rails server -p 3001 //Make sure port is 3001. React is running on 3000
 ```
+
+## Things to impove on if I had more time
+* Better Chart Visualization
+* Look into performance
+* Run unit tests
+* Run usability tests
+* Ruby / Rails best pratices
+
