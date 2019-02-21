@@ -150,7 +150,6 @@ class EmployeeContainer extends Component {
     render(){
         return (
            <div>
-                {this.state.loadingError ? <p>Error getting data from the server</p> : null}
                 <Grid container direction="row" style={{ marginTop: '2rem', paddingLeft: '5rem', paddingRight: '5rem' }} >
                     <Grid  item container xs={7} direction="column" >
                         <AllEmployee employees={this.state.employees} handleDelete={this.handleDelete} handleEdit={this.handleEdit} />
